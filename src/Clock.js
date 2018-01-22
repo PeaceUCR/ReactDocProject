@@ -1,5 +1,5 @@
 /**
- * Created by ibm on 1/21/2018.
+ * Created by hea on 1/22/18.
  */
 import React, { Component } from 'react';
 class Clock extends Component{
@@ -8,9 +8,11 @@ class Clock extends Component{
         this.state={date:new Date()};
         this.update= this.update.bind(this);
     }
+
     componentDidMount(){
-        setInterval(update,1000);// we can't directly call update here, otherwise will lost this
+        setInterval(this.update,1000);// we can't directly call update here, otherwise will lost this
     }
+
     update(){
         this.setState({date: new Date()});
     }
